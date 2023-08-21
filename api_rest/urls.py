@@ -1,10 +1,12 @@
-from django.contrib import admin
+from rest_framework import routers
 from django.urls import path, include
+from . import resources
 
-from . import views
+
+router = routers.DefaultRouter(trailing_slash=True)
+
+router.register('user', resources.UserResource, 'user')
 
 urlpatterns = [
-    path('', views.on_list_users, name='on_list_users'),
-    path('user/<int:id>', views.get_user, name='get_user'),
-    path('data/', views.user_manager)
+    path('', include(router.urls))
 ]

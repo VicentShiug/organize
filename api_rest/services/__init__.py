@@ -1,5 +1,5 @@
-from users import get_users
+from .users import ServiceUser
 
 __all__ = [
-  'get_users'
+  'ServiceUser'
 ]

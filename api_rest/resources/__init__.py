@@ -1,5 +1,5 @@
-from .users import printdoido
+from .users import  UserResource
 
 __all__ = [
-  'printdoido'
+  'UserResource'
 ]
